@@ -26,6 +26,7 @@ import io.undertow.servlet.util.ImmediateInstanceFactory;
 
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -114,7 +115,7 @@ public class AproxDeployment
         }
     }
     
-    public DeploymentInfo addSecurityConstraintToDeployment(DeploymentInfo di, String role, String constraintUrl, String... httpMethods) {
+    public DeploymentInfo addSecurityConstraintToDeployment(DeploymentInfo di, String role, String constraintUrl, List<String> httpMethods) {
         SecurityConstraint constraint = new SecurityConstraint();
         WebResourceCollection collection = new WebResourceCollection();
         collection.addUrlPattern(constraintUrl);
